@@ -9,7 +9,7 @@
 </head>
 	<body <?php body_class(); ?>>
     <header class="bg-gray-300">
-        this is the header
+        this is the header, this is a test 2
         <?php $defaults = array( 
             'container_class' => 'bg-blue-500', 
             'menu_class'      => 'flex', 
