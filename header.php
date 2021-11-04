@@ -8,13 +8,13 @@
 	<?php wp_head(); ?>
 </head>
 	<body <?php body_class(); ?>>
-    <header class="bg-gray-300">
-        this is the header, this is a test 2
+    <header class=" flex bg-gray-300">
+    <h1 class="text-3xl uppercase"><?php bloginfo( 'name' ); ?></h1>
         <?php $defaults = array( 
-            'container_class' => 'bg-blue-500', 
-            'menu_class'      => 'flex', 
-            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-            'add_a_class'     => 'pl-2 bg-green-500',
+            'container_class' => 'w-full  flex flex-wrap justify-center  content-center', 
+            'menu_class'      => 'flex flex-row justify-around', 
+            'items_wrap'      => '<ul class="flex justify-between">%3$s</ul>',
+            'add_a_class'     => 'px-5 hover:bg-green-500 uppercase',
         ); ?>
 
 <?php wp_nav_menu( $defaults ); ?>
