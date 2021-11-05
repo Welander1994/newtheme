@@ -4,12 +4,11 @@ if (is_user_logged_in()) {
     show_admin_bar(true);
 }
 
-function additional_custom_styles() {
-
-    /*Enqueue The Styles*/
+function additional_custom_assets() {
     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/tailwind.css' ); 
 }
-add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
+add_action( 'wp_enqueue_scripts', 'additional_custom_assets' );
+
 
 function add_additional_class_on_a($classes, $item, $args)
 {
@@ -20,4 +19,19 @@ function add_additional_class_on_a($classes, $item, $args)
 }
 
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
+
+
+function catch_that_image() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+  
+    if(empty($first_img)){ //Defines a default image
+      $first_img = "/images/default.jpg";
+    }
+    return $first_img;
+  }
 
