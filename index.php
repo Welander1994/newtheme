@@ -29,80 +29,132 @@
 
 
 <?php if ( is_front_page() ) { ?>
-	<div class="w-full">
-		<canvas id="c"></canvas>
+	<div class="bottom-0 ">
+		<canvas class="bg-black " id="c"></canvas>
 	</div>
 	<script type="module"> 
 		console.log("this is a module")
 
 		import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.134.0-dfARp6tVCbGvQehLfkdx/mode=imports/optimized/three.js';
 
+		// Canvas
+		const canvas = document.querySelector('#c')
 
-		function main() {
-			const canvas = document.querySelector('#c');
-			const renderer = new THREE.WebGLRenderer({
-				canvas: canvas,
-				alpha: true
-			});
+		// Scene
+		const scene = new THREE.Scene()
 
-			const fov = 75;
-			const aspect = 2;  // the canvas default
-			const near = 0.1;
-			const far = 50;
-			const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-			camera.position.z = 20;
+		// Objects
+		const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
+		
+		const particlesGeometry = new THREE.BufferGeometry;
+		const particlesCnt = 5000;
 
-			const scene = new THREE.Scene();
+		const posArray = new Float32Array(particlesCnt * 3);
+		// xyz, xyz, xyz, xyz
 
-			{
-				const color = 0xFFFFFF;
-				const intensity = 2;
-				const light = new THREE.DirectionalLight(color, intensity);
-				light.position.set(-1, 2, 4);
-				scene.add(light);
-			}
+		for(let i = 0; i < particlesCnt * 3; i++) {
+			posArray[i] = (Math.random() - 0.5) * 5;
+		};
 
-			const boxWidth = 3;
-			const boxHeight = 3;
-			const boxDepth = 3;
-			const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+		particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
+		// Materials
 
-			function makeInstance(geometry, color, x) {
-				const material = new THREE.MeshPhongMaterial({color});
+		const material = new THREE.PointsMaterial({
+			size: 0.005
+		})
 
-				const cube = new THREE.Mesh(geometry, material);
-				scene.add(cube);
+		const particlesMaterial = new THREE.PointsMaterial({
+			size: 0.003
+		})
+		
 
-				cube.position.x = x;
+		// Mesh
+		// const sphere = new THREE.Points(geometry,material)
+		const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
+		scene.add(particlesMesh)
 
-				return cube;
-			}
+		// Lights
 
-			const cubes = [
-				makeInstance(geometry, 0x44aa88,  0),
-				makeInstance(geometry, 0x8844aa, -12),
-				makeInstance(geometry, 0xaa8844,  12),
-			];
+		const pointLight = new THREE.PointLight(0xffffff, 0.1)
+		pointLight.position.x = 2
+		pointLight.position.y = 3
+		pointLight.position.z = 4
+		scene.add(pointLight)
 
-			function render(time) {
-				time *= 0.0002;
-
-				cubes.forEach((cube, ndx) => {
-				const speed = 1 + ndx * .1;
-				const rot = time * speed;
-				cube.rotation.x = rot;
-				cube.rotation.y = rot;
-				});
-
-				renderer.render(scene, camera);
-
-				requestAnimationFrame(render);
-			}
-
-			requestAnimationFrame(render);
+		/**
+		 * Sizes
+		 */
+		const sizes = {
+			width: window.innerWidth,
+			height: window.innerHeight
 		}
 
-			main();
+		window.addEventListener('resize', () =>
+		{
+			// Update sizes
+			sizes.width = window.innerWidth
+			sizes.height = window.innerHeight
+
+			// Update camera
+			camera.aspect = sizes.width / sizes.height
+			camera.updateProjectionMatrix()
+
+			// Update renderer
+			renderer.setSize(sizes.width, sizes.height)
+			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+		})
+
+		/**
+		 * Camera
+		 */
+		// Base camera
+		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+		camera.position.x = 0
+		camera.position.y = 0
+		camera.position.z = 2
+		scene.add(camera)
+
+		// Controls
+		// const controls = new OrbitControls(camera, canvas)
+		// controls.enableDamping = true
+
+		/**
+		 * Renderer
+		 */
+		const renderer = new THREE.WebGLRenderer({
+			canvas: canvas,
+			alpha: true
+		})
+		renderer.setSize(sizes.width, sizes.height)
+		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+		renderer.setClearColor(new THREE.Color('#21282a'), 1 )
+
+		/**
+		 * Animate
+		 */
+
+		const clock = new THREE.Clock()
+
+		const tick = () =>
+		{
+
+			const elapsedTime = clock.getElapsedTime()
+
+			// Update objects
+			// sphere.rotation.y = .5 * elapsedTime
+			particlesMesh.rotation.y = .03 * elapsedTime;
+			particlesMesh.rotation.x = -.02 * elapsedTime;
+			// Update Orbital Controls
+			// controls.update()
+
+			// Render
+			renderer.render(scene, camera)
+
+			// Call tick again on the next frame
+			window.requestAnimationFrame(tick)
+		}
+
+		tick()
 
 	</script>
 
