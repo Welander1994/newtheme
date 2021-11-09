@@ -1,6 +1,6 @@
 <?php get_header();?>
 <?php while ( have_posts() ) : the_post(); ?>
-<div class="body bg-gray-600">
+<div class="body  z-50">
 	<div class="container w-900">
 
 
@@ -17,7 +17,7 @@
 					$phrase = get_the_content();
 					// This is where wordpress filters the content text and adds paragraphs
 					$phrase = apply_filters('the_content', $phrase);
-					$replace = '<p class="bg-white">';
+					$replace = '<p class="text-white">';
 					
 					$content = str_replace('<p>', $replace, $phrase);
 
@@ -28,12 +28,19 @@
 ?>
 
 
-<?php if ( is_front_page() ) { ?>
-	<div class="bottom-0 ">
-		<canvas class="bg-black " id="c"></canvas>
+
+
+
+				</div>
+			</div>
+		</div>
 	</div>
+</div>
+<?php endwhile; ?>
+
+<?php if ( is_front_page() ) { ?>
+		<canvas class="" id="c"></canvas>
 	<script type="module"> 
-		console.log("this is a module")
 
 		import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.134.0-dfARp6tVCbGvQehLfkdx/mode=imports/optimized/three.js';
 
@@ -122,8 +129,7 @@
 		 * Renderer
 		 */
 		const renderer = new THREE.WebGLRenderer({
-			canvas: canvas,
-			alpha: true
+			canvas: canvas
 		})
 		renderer.setSize(sizes.width, sizes.height)
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -159,12 +165,4 @@
 	</script>
 
 <?php } ?>
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<?php endwhile; ?>
 <?php get_footer();?>
