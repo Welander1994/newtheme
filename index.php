@@ -1,17 +1,17 @@
 <?php get_header();?>
-<?php while ( have_posts() ) : the_post(); ?>
+
+<?php if ( is_front_page() ) { ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 <div class="body  z-50">
-	<div class="container w-900">
+	<div class=" w-sceen">
 
 
-		<div class="main">
-			<div class="post content">
+		<div class="main flex flex-col justify-center">
 <!-- 				<h1 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1> -->
 
-				<div class="content">
-<!-- 					<?php the_content(); ?> -->
+				<div class="w-4/5 m-auto">
 
-					<h1 class="text-4xl"><?php the_title(); ?></h1>
+					<h1 class="text-4xl text-white text-center w-sceen"><?php the_title(); ?></h1>
 
 					<?php 
 					$phrase = get_the_content();
@@ -20,26 +20,70 @@
 					$replace = '<p class="text-white">';
 					
 					$content = str_replace('<p>', $replace, $phrase);
-
+					echo $content;
 				?>
-				<img class="w-200" src="<?php echo catch_that_image() ?>" alt="test">
+
+<ul class="text-white flex flex row">
+ 
+ <?php 
+ // Define our WP Query Parameters
+ $the_query = new WP_Query( 'posts_per_page=5' ); ?>
+   
+  
+ <?php 
+ // Start our WP Query
+ while ($the_query -> have_posts()) : $the_query -> the_post(); 
+ // Display the Post Title with Hyperlink
+ ?>
+   
+  
+ <li class="p-4">
+	<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+		<?php if ( has_post_thumbnail() ) :
+			$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+			<img 
+				src="<?php echo $featured_image[0]; ?>" 
+				alt='' 
+				class="w-40"
+			/>
+		<?php endif; ?>
+    <?php 
+		$myExcerpt = get_the_excerpt();
+		$tags = array("<p>", "</p>");
+		$myExcerpt = str_replace($tags, "", $myExcerpt);
+		?>
+		
+		<p class="bg-black">
+		<?php   echo $myExcerpt; ?>
+		
+		</p>
+</li>
+   
+  
+ <?php 
+ // Repeat the process and reset once it hits the limit
+ endwhile;
+ wp_reset_postdata();
+ ?>
+ </ul>
+
+<!-- 				<img class="w-200" src="<?php echo catch_that_image() ?>" alt="test">
 				<?php 
                echo preg_replace('/<img[^>]+./','',$content);
-?>
+			   
+?> -->
 
 
 
 
 
 				</div>
-			</div>
 		</div>
 	</div>
 </div>
 <?php endwhile; ?>
 
-<?php if ( is_front_page() ) { ?>
-		<canvas class="" id="c"></canvas>
+	<canvas class="" id="c"></canvas>
 	<script type="module"> 
 
 		import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.134.0-dfARp6tVCbGvQehLfkdx/mode=imports/optimized/three.js';
@@ -164,5 +208,44 @@
 
 	</script>
 
-<?php } ?>
+<?php } else {
+   while ( have_posts() ) : the_post(); ?>
+  <div class="body  z-50">
+	  <div class="container w-900">
+  
+  
+		  <div class="main">
+			  <div class="post content">
+  <!-- 				<h1 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1> -->
+  
+				  <div class="content">
+  <!-- 					<?php the_content(); ?> -->
+  
+					  <h1 class="text-4xl"><?php the_title(); ?></h1>
+  
+					  <?php 
+					  $phrase = get_the_content();
+					  // This is where wordpress filters the content text and adds paragraphs
+					  $phrase = apply_filters('the_content', $phrase);
+					  $replace = '<p class="text-white">';
+					  
+					  $content = str_replace('<p>', $replace, $phrase);
+  
+				  ?>
+				  <img class="w-200" src="<?php echo catch_that_image() ?>" alt="test">
+				  <?php 
+				 echo preg_replace('/<img[^>]+./','',$content);
+  ?>
+  
+  
+  
+  
+  
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+  <?php endwhile; 
+} ?>
 <?php get_footer();?>

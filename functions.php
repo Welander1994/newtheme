@@ -4,6 +4,9 @@ if (is_user_logged_in()) {
     show_admin_bar(true);
 }
 
+	
+add_theme_support( 'post-thumbnails' );
+
 function additional_custom_assets() {
     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/tailwind.css' ); 
 }
