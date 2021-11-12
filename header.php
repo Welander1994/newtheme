@@ -8,8 +8,8 @@
 	<?php wp_head(); ?>
 </head>
 	<body <?php body_class(); ?>>
-    <header class=" flex bg-gray-300">
-    <h1 class="text-3xl uppercase"><?php bloginfo( 'name' ); ?></h1>
+    <header class=" flex bg-gray-300 bg-opacity-25">
+    <h1 class="text-xl uppercase"><?php bloginfo( 'name' ); ?></h1>
         <?php $defaults = array( 
             'container_class' => 'w-full  flex flex-wrap justify-center  content-center', 
             'menu_class'      => 'flex flex-row justify-around', 

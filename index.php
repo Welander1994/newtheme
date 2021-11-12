@@ -10,8 +10,13 @@
 <!-- 				<h1 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1> -->
 
 				<div class="w-4/5 m-auto">
+					<section class="p-56 text-white text-center w-sceen">
+<!-- 						<h1 class="text-6xl p-2 uppercase font-black" ><?php bloginfo( 'name' ); ?></h1> -->
+						<h1 class="text-8xl p-2 uppercase font-black" >theilmann</h1>
+						<h1 class="text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
+						<p class="text-xl p-2">Make It simple</p>
 
-					<h1 class="text-4xl text-white text-center w-sceen"><?php the_title(); ?></h1>
+					</section>
 
 					<?php 
 					$phrase = get_the_content();
@@ -23,49 +28,48 @@
 					echo $content;
 				?>
 
-<ul class="text-white flex flex row">
- 
- <?php 
- // Define our WP Query Parameters
- $the_query = new WP_Query( 'posts_per_page=5' ); ?>
-   
-  
- <?php 
- // Start our WP Query
- while ($the_query -> have_posts()) : $the_query -> the_post(); 
- // Display the Post Title with Hyperlink
- ?>
-   
-  
- <li class="p-4">
-	<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-		<?php if ( has_post_thumbnail() ) :
-			$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
-			<img 
-				src="<?php echo $featured_image[0]; ?>" 
-				alt='' 
-				class="w-40"
-			/>
-		<?php endif; ?>
-    <?php 
-		$myExcerpt = get_the_excerpt();
-		$tags = array("<p>", "</p>");
-		$myExcerpt = str_replace($tags, "", $myExcerpt);
-		?>
-		
-		<p class="bg-black">
-		<?php   echo $myExcerpt; ?>
-		
-		</p>
-</li>
-   
-  
- <?php 
- // Repeat the process and reset once it hits the limit
- endwhile;
- wp_reset_postdata();
- ?>
- </ul>
+			<ul class="text-white flex flex row">	
+				<?php 
+				// Define our WP Query Parameters
+				$the_query = new WP_Query( 'posts_per_page=5' ); ?>
+				
+				
+				<?php 
+				// Start our WP Query
+				while ($the_query -> have_posts()) : $the_query -> the_post(); 
+				// Display the Post Title with Hyperlink
+				?>
+				
+				
+				<li class="p-4">
+					<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+						<?php if ( has_post_thumbnail() ) :
+							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+							<img 
+								src="<?php echo $featured_image[0]; ?>" 
+								alt='' 
+								class="w-40"
+							/>
+						<?php endif; ?>
+					<?php 
+						$myExcerpt = get_the_excerpt();
+						$tags = array("<p>", "</p>");
+						$myExcerpt = str_replace($tags, "", $myExcerpt);
+						?>
+						
+						<p class="bg-black">
+							<?php   echo $myExcerpt; ?>
+						
+						</p>
+				</li>
+				
+				
+				<?php 
+				// Repeat the process and reset once it hits the limit
+				endwhile;
+				wp_reset_postdata();
+				?>
+			</ul>
 
 <!-- 				<img class="w-200" src="<?php echo catch_that_image() ?>" alt="test">
 				<?php 
@@ -83,7 +87,7 @@
 </div>
 <?php endwhile; ?>
 
-	<canvas class="" id="c"></canvas>
+	<canvas class="max-h-screen max-w-full" id="c"></canvas>
 	<script type="module"> 
 
 		import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.134.0-dfARp6tVCbGvQehLfkdx/mode=imports/optimized/three.js';
