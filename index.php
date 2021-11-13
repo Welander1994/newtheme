@@ -9,8 +9,7 @@
 		<div class="main flex flex-col justify-center">
 <!-- 				<h1 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1> -->
 
-				<div class="w-4/5 m-auto">
-					<section class="p-56 text-white text-center w-sceen">
+					<section class="p-80 text-white text-center w-sceen">
 <!-- 						<h1 class="text-6xl p-2 uppercase font-black" ><?php bloginfo( 'name' ); ?></h1> -->
 						<h1 class="text-8xl p-2 uppercase font-black" >theilmann</h1>
 						<h1 class="text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
@@ -18,11 +17,14 @@
 
 					</section>
 
+				<div class="w-4/5 m-auto bg-white">
+
+
 					<?php 
 					$phrase = get_the_content();
 					// This is where wordpress filters the content text and adds paragraphs
 					$phrase = apply_filters('the_content', $phrase);
-					$replace = '<p class="text-white">';
+					$replace = '<p class="text-black">';
 					
 					$content = str_replace('<p>', $replace, $phrase);
 					echo $content;
@@ -86,8 +88,8 @@
 	</div>
 </div>
 <?php endwhile; ?>
+	<canvas class="" id="c"></canvas>
 
-	<canvas class="max-h-screen max-w-full" id="c"></canvas>
 	<script type="module"> 
 
 		import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.134.0-dfARp6tVCbGvQehLfkdx/mode=imports/optimized/three.js';
