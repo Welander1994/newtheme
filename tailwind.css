@@ -51,6 +51,14 @@ canvas{
   z-index:-1;
 }
 
+.bg-primary {
+  background-color: #2d3b3e;
+}
+
+.bg-secondary {
+  background-color: #1f282a;
+}
+
 /**
 Remove the margin in all browsers.
 */
