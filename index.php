@@ -3,34 +3,35 @@
 <?php if ( is_front_page() ) { ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 <div class="body  z-50">
-	<div class=" w-sceen">
+	<div class=" w-full">
 
 
 		<div class="main flex flex-col justify-center">
 <!-- 				<h1 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1> -->
 
-					<section class="p-80 text-white text-center w-sceen">
+					<section class="h-screen flex flex-col justify-center text-white text-center w-sceen">
 <!-- 						<h1 class="text-6xl p-2 uppercase font-black" ><?php bloginfo( 'name' ); ?></h1> -->
 						<h1 class="text-8xl p-2 uppercase font-black" >theilmann</h1>
 						<h1 class="text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
 						<p class="text-xl p-2">Make It simple</p>
-
+						<div class="py-5">
+							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black" href="#">services</a>
+							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black" href="#">kontakt</a>
+						</div>
 					</section>
+		<div class="w-full bg-gray-100">
+			<div class="w-4/5 m-auto ">
 
-				<div class="w-4/5 m-auto bg-white">
-
-
+				<div class="m-auto text-center p-10">
 					<?php 
-					$phrase = get_the_content();
-					// This is where wordpress filters the content text and adds paragraphs
-					$phrase = apply_filters('the_content', $phrase);
-					$replace = '<p class="text-black">';
-					
-					$content = str_replace('<p>', $replace, $phrase);
-					echo $content;
-				?>
-
-			<ul class="text-white flex flex row">	
+						$id=11; 
+						$post = get_post($id); 
+						$content = apply_filters('the_content', $post->post_content); 
+					?>
+						<h2 class="text-2xl font-bold"><?php echo get_the_title( $ID );?> </h2>
+						<p><?php echo $content; ?> </p>
+				</div>
+			<ul class="flex flex row justify-between text-black w-full">	
 				<?php 
 				// Define our WP Query Parameters
 				$the_query = new WP_Query( 'posts_per_page=5' ); ?>
@@ -43,23 +44,25 @@
 				?>
 				
 				
-				<li class="p-4">
-					<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+				<li class="p-4 flex flex-col justify-center content-center text-center m-4 w-1/4 h-96 border-2 bg-white">
+					<a href="<?php the_permalink() ?>">
 						<?php if ( has_post_thumbnail() ) :
 							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
 							<img 
 								src="<?php echo $featured_image[0]; ?>" 
 								alt='' 
-								class="w-40"
+								class="w-2/5 m-auto pt-10"
 							/>
 						<?php endif; ?>
+					</a>
+						<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 					<?php 
 						$myExcerpt = get_the_excerpt();
 						$tags = array("<p>", "</p>");
 						$myExcerpt = str_replace($tags, "", $myExcerpt);
 						?>
 						
-						<p class="bg-black">
+						<p class="text-sm m-5 pb-5">
 							<?php   echo $myExcerpt; ?>
 						
 						</p>
@@ -84,6 +87,7 @@
 
 
 				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -224,8 +228,8 @@
 			  <div class="post content">
   <!-- 				<h1 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1> -->
   
-				  <div class="content">
-  <!-- 					<?php the_content(); ?> -->
+				  <div class="w-4/5 m-auto ">
+<!--   					<?php the_content(); ?> -->
   
 					  <h1 class="text-4xl"><?php the_title(); ?></h1>
   
@@ -233,7 +237,7 @@
 					  $phrase = get_the_content();
 					  // This is where wordpress filters the content text and adds paragraphs
 					  $phrase = apply_filters('the_content', $phrase);
-					  $replace = '<p class="text-white">';
+					  $replace = '<p class="text-black">';
 					  
 					  $content = str_replace('<p>', $replace, $phrase);
   

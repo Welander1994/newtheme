@@ -1,5 +1,5 @@
 
-<footer class="w-full h-auto py-6 bg-primary flex flex-col justify-center text-white">
+<footer class="w-full h-auto py-6 bg-3 flex flex-col justify-center text-white">
     <div class="m-auto w-4/5 flex justify-between border-b border-gray-500">  
         <div class="w-1/3">
             <h1 class="pb-2 text-m uppercase font-medium w-6"><?php bloginfo( 'name' ); ?></h1>
