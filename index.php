@@ -22,14 +22,24 @@
 		<div class="w-full bg-gray-100">
 			<div class="w-4/5 m-auto ">
 
-				<div class="m-auto text-center p-10">
-					<?php 
-						$id=11; 
-						$post = get_post($id); 
-						$content = apply_filters('the_content', $post->post_content); 
-					?>
-						<h2 class="text-2xl font-bold"><?php echo get_the_title( $ID );?> </h2>
-						<p><?php echo $content; ?> </p>
+				<div class="m-auto text-center py-5">
+					<div class="flex flex-row justify-between">
+						<?php 
+							$id=83; 
+							$post = get_post($id); 
+							$content = apply_filters('the_content', $post->post_content); 
+						?>
+							<?php echo $content; ?>
+					</div>
+					<div class="py-20">
+						<?php 
+							$id=13; 
+							$post = get_post($id); 
+							$content = apply_filters('the_content', $post->post_content); 
+						?>
+							<h2 class="text-2xl font-bold"><?php echo get_the_title( $ID );?> </h2>
+							<p><?php echo $content; ?> </p>
+					</div>
 				</div>
 			<ul class="flex flex row justify-between text-black w-full">	
 				<?php 
@@ -45,16 +55,15 @@
 				
 				
 				<li class="p-4 flex flex-col justify-center content-center text-center m-4 w-1/4 h-96 border-2 bg-white">
-					<a href="<?php the_permalink() ?>">
 						<?php if ( has_post_thumbnail() ) :
-							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'small' ); ?>
 							<img 
 								src="<?php echo $featured_image[0]; ?>" 
 								alt='' 
 								class="w-2/5 m-auto pt-10"
 							/>
 						<?php endif; ?>
-					</a>
+
 						<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 					<?php 
 						$myExcerpt = get_the_excerpt();
@@ -75,16 +84,39 @@
 				wp_reset_postdata();
 				?>
 			</ul>
-
-<!-- 				<img class="w-200" src="<?php echo catch_that_image() ?>" alt="test">
-				<?php 
-               echo preg_replace('/<img[^>]+./','',$content);
-			   
-?> -->
-
-
-
-
+					<!-- this is the section where we descript the owner -->
+					<div class="w-full p-10 flex justify-evenly bg-black text-white">
+						<div class="w-2/3 flex-wrap content-center">
+							<div>
+								<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+								<?php 
+									$myExcerpt = get_the_excerpt();
+									$tags = array("<p>", "</p>");
+									$myExcerpt = str_replace($tags, "", $myExcerpt);
+								?>
+								
+								<p class="text-sm py-5">
+									<?php   echo $myExcerpt; ?>
+								</p>
+							</div>
+							<div class="py-5">
+								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black" href="#">services</a>
+								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black" href="#">kontakt</a>
+							</div>
+						</div>
+						<div class="">
+							<a href="<?php the_permalink() ?>">
+								<?php if ( has_post_thumbnail() ) :
+									$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+									<img 
+										src="<?php echo $featured_image[0]; ?>" 
+										alt='' 
+										class=" p-10"
+									/>
+								<?php endif; ?>
+							</a>
+						</div>
+					</div>
 
 				</div>
 			</div>

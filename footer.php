@@ -1,12 +1,12 @@
 
 <footer class="w-full h-auto py-6 bg-3 flex flex-col justify-center text-white">
     <div class="m-auto w-4/5 flex justify-between border-b border-gray-500">  
-        <div class="w-1/3">
+        <div class="w-2/4">
             <h1 class="pb-2 text-m uppercase font-medium w-6"><?php bloginfo( 'name' ); ?></h1>
             <p class="py-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
         </div>
 
-        <div class="flex justify-between w-3/6 text-sm">
+        <div class="flex justify-between w-2/6 text-sm">
             <ul>
                 <li class="pb-2">Service</li>
                 <li class="pb-2">test 2</li>
@@ -15,12 +15,6 @@
 
             <ul>
                 <li class="pb-2">Om Virksomheden</li>
-                <li class="pb-2">test 2</li>
-                <li class="pb-2">test 3</li>
-            </ul>
-
-            <ul>
-                <li class="pb-2">Vidste du?</li>
                 <li class="pb-2">test 2</li>
                 <li class="pb-2">test 3</li>
             </ul>

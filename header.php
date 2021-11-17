@@ -22,7 +22,7 @@
             <div class="flex flex-col w-4/5">
                 <div class="flex flex-row justify-between w-full">
                     <div class="flex w-44 content-end">
-                            <h1 class="text-m uppercase font-medium "><?php bloginfo( 'name' ); ?></h1>
+                            <a class="text-m uppercase font-medium " href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
                     </div>
                     
                     <div class="self-center">
