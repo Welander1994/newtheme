@@ -63,6 +63,18 @@ canvas{
   background-color: #1F282A;
 }
 
+.hbg-primary:hover {
+  background-color: #2d3b3e;
+}
+
+.text-primary {
+  color: #2d3b3e;
+}
+
+.border-primary {
+  border-color: #2d3b3e;
+}
+
 /**
 Remove the margin in all browsers.
 */

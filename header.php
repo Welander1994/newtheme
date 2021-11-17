@@ -30,7 +30,7 @@
                                     'container_class' => 'w-full flex flex-wrap', 
                                     'menu_class'      => 'flex flex-row justify-around ', 
                                     'items_wrap'      => '<ul class="flex">%3$s</ul>',
-                                    'add_a_class'     => 'ml-5 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out  capitalize ',
+                                    'add_a_class'     => 'ml-5 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out capitalize ',
                                 ); ?>
                                 <?php wp_nav_menu( $defaults ); ?>
                     </div>
