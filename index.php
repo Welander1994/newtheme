@@ -2,8 +2,8 @@
 
 <?php if ( is_front_page() ) { ?>
 	<?php while ( have_posts() ) : the_post(); ?>
-<div class="body  z-50">
-	<div class=" w-full">
+<div class="body z-50">
+	<div class="w-screen overflow-hidden">
 
 
 		<div class="main flex flex-col justify-center">
@@ -11,8 +11,8 @@
 
 					<section class="h-screen flex flex-col justify-center text-white text-center w-sceen">
 <!-- 						<h1 class="text-6xl p-2 uppercase font-black" ><?php bloginfo( 'name' ); ?></h1> -->
-						<h1 class="text-8xl p-2 uppercase font-black" >theilmann</h1>
-						<h1 class="text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
+						<h1 class="text-4xl sm:text-8xl p-2 uppercase font-black" >theilmann</h1>
+						<h1 class="text-2xl sm:text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
 						<p class="text-xl p-2">Make It simple</p>
 						<div class="py-5">
 							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">services</a>
@@ -22,7 +22,7 @@
 		<div class="w-full bg-gray-100">
 			<div class="w-4/5 m-auto ">
 
-				<div class="m-auto text-center py-5">
+				<div class=" text-center py-5">
 					<div class="flex flex-row justify-between">
 						<?php 
 							$id=83; 
@@ -41,7 +41,7 @@
 							<p><?php echo $content; ?> </p>
 					</div>
 				</div>
-			<ul class="flex flex row justify-between text-black w-full">	
+			<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap justify-between text-black w-full">	
 				<?php 
 				// Define our WP Query Parameters
 				$the_query = new WP_Query( 'posts_per_page=5' ); ?>
@@ -54,7 +54,7 @@
 				?>
 				
 				
-				<li class="p-4 flex flex-col justify-center content-center text-center m-4 w-1/4 h-96 border-2 bg-white">
+				<li class="p-4 flex flex-col justify-center content-center text-center m-4 sm:p-0 sm:w-5/12  md:w-1/4 h-96 border-2 bg-white">
 						
 				<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">
 					<?php if ( has_post_thumbnail() ) :
@@ -87,9 +87,9 @@
 				?>
 			</ul>
 					<!-- this is the section where we descript the owner -->
-					<div class="w-full h-full py-20 flex flex-row justify-evenly">
-						<div class="w-1/3 flex flex-wrap content-center">
-							<div>
+					<div class="w-full h-full py-20 flex flex-col sm:flex-row justify-evenly">
+						<div class="w-full sm:w-1/3 flex flex-wrap content-center order-last sm:order-none">
+							<div class="text-center pt-5 sm:pt-0 sm:text-left">
 								<a class="text-2xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 								<?php 
 									$myExcerpt = get_the_excerpt();
@@ -101,19 +101,19 @@
 									<?php   echo $myExcerpt; ?>
 								</p>
 							</div>
-							<div class="py-5">
+							<div class="flex flex-row m-auto py-5">
 								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">services</a>
 								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="#">kontakt</a>
 							</div>
 						</div>
-						<div class="w-max">
+						<div class="w-full">
 							<a href="<?php the_permalink() ?>">
 								<?php if ( has_post_thumbnail() ) :
 									$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
 									<img 
 										src="<?php echo $featured_image[0]; ?>" 
 										alt='' 
-										class="w-2/3"
+										class=" w-3/4 m-auto md:w-2/4"
 									/>
 								<?php endif; ?>
 							</a>
@@ -212,6 +212,7 @@
 					</a>
 				</div>
 			</div>
+			
 			<div>
 				<ul class="flex flex-wrap justify-center text-black w-full">	
 					<?php 
