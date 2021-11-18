@@ -7,7 +7,7 @@
 	<title><?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
 	<?php wp_head(); ?>
 </head>
-	<body <?php body_class(); ?>>
+	<body class="w-full" <?php body_class(); ?>>
     <header class="w-full bg-primary flex flex-col justify-center text-white">
 
         <div class="w-full bg-primary flex justify-center text-white bg-secondary ">
