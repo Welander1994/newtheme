@@ -11,8 +11,8 @@
 
 					<section class="h-screen flex flex-col justify-center text-white text-center w-sceen">
 <!-- 						<h1 class="text-6xl p-2 uppercase font-black" ><?php bloginfo( 'name' ); ?></h1> -->
-						<h1 class="text-4xl sm:text-8xl p-2 uppercase font-black" >theilmann</h1>
-						<h1 class="text-2xl sm:text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
+						<h1 class="text-4xl sm:text-6xl md:text-8xl p-2 uppercase font-black" >theilmann</h1>
+						<h1 class="text-2xl sm:text-4xl md:text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
 						<p class="text-xl p-2">Make It simple</p>
 						<div class="py-5">
 							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">services</a>
@@ -212,9 +212,14 @@
 					</a>
 				</div>
 			</div>
-			
+			<?php 
+global $post;
+
+// service content
+if( $post->ID == 13) { ?>
+	<div class="bg-blue-200">
 			<div>
-				<ul class="flex flex-wrap justify-center text-black w-full">	
+				<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap justify-between text-black w-full">	
 					<?php 
 					// Define our WP Query Parameters
 					$the_query = new WP_Query( 'posts_per_page=5' ); ?>
@@ -227,7 +232,7 @@
 					?>
 					
 					
-					<li class="p-8 flex flex-row justify-evenly content-center text-left m-4 w-2/5 border-2 bg-white">
+					<li class="p-4 flex flex-col justify-center content-center text-center m-4 sm:p-0 sm:w-5/12  md:w-1/4 h-96 border-2 bg-white">
 							
 					<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">
 						<?php if ( has_post_thumbnail() ) :
@@ -235,23 +240,21 @@
 							<img 
 								src="<?php echo $featured_image[0]; ?>" 
 								alt='' 
-								class="w-full m-auto"
+								class="w-2/5 m-auto pt-10"
 							/>
 						<?php endif; ?>
 					</a>
-						<div class="w-2/4">
-							<a class="text-xl font-bold capitalize" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-							<?php 
+							<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+						<?php 
 							$myExcerpt = get_the_excerpt();
 							$tags = array("<p>", "</p>");
 							$myExcerpt = str_replace($tags, "", $myExcerpt);
 							?>
 							
-							<p class="text-sm">
+							<p class="text-sm m-5 pb-5">
 								<?php   echo $myExcerpt; ?>
 							
 							</p>
-						</div>
 					</li>
 					
 					
@@ -262,8 +265,41 @@
 					?>
 				</ul>
 			</div>
+		<div class="my-5">
+			<div class="text-center">
+				<h2 class="text-xl font-thin">FAQ - Frequently asked questions</h2>
+				<h2 class="text-xl font-bold capitalize mt-2">Mangler du svar på et spørgsmål?</h2>
+				<p class="text-l my-2">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. </p>
+			</div>
+			<div>
+				<details class="p-5 my-2 border-2 bg-white">
+					<summary class="py-2">Visible Summary of Details</summary> 
+					<hr>
+					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+				</details>
+				<details class="p-5 my-2 border-2 bg-white">
+					<summary class="py-2">Visible Summary of Details</summary> 
+					<hr>
+					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+				</details>
+				<details class="p-5 my-2 border-2 bg-white">
+					<summary class="py-2">Visible Summary of Details</summary> 
+					<hr>
+					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+				</details>
+				<details class="p-5 my-2 border-2 bg-white">
+					<summary class="py-2">Visible Summary of Details</summary> 
+					<hr>
+					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+				</details>
+			</div>
 		</div>
 	</div>
+
+<?php } ?>
+
+	</div>
+	
 
 	
 

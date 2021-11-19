@@ -21,7 +21,7 @@
         </div>
         <div class="bg-primary flex justify-center content-center text-white bg-primary ">
             <div class="flex flex-col w-4/5">
-                <div class="flex flex-row justify-between w-full">
+                <div class="flex flex-row justify-between py-2 w-full">
                     <div class="flex w-44 content-end">
                             <a class="text-sm uppercase font-medium " href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
                     </div>
