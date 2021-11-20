@@ -143,172 +143,171 @@
 <section class="h-3/6 flex flex-col justify-center text-white text-center w-sceen">
 	<a class="text-8xl font-bold capitalize m-14" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 </section>
-	<div class="w-full bg-gray-100">
-		<div class="w-4/5 h-screen m-auto ">
-			<div class="">
-				<div class="flex justify-center">
-						<div>
-								<?php 
-									$myContent = get_the_content();
-									$tags = array("<p>", "</p>");
-									$myContent = str_replace($tags, "", $myContent);
-								?>
+		<div class="w-full bg-gray-100">
+			<div class="w-4/5 h-screen m-auto ">
+				<div class="flex flex-col justify-center">
+					<div>
+						<?php 
+							$myContent = get_the_content();
+							$tags = array("<p>", "</p>");
+							$myContent = str_replace($tags, "", $myContent);
+						?>
 									
-							<p class="text-m py-5">
-								<?php   echo $myContent; ?>
-							</p>
-						</div>
-						<div class="w-max">
-							<a href="<?php the_permalink() ?>">
-								<?php if ( has_post_thumbnail() ) :
-								$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
-							<img 
-								src="<?php echo $featured_image[0]; ?>" 
-								alt='' 
-								class="w-2/3"
-							/>
-						<?php endif; ?>
-					</a>
+						<p class="text-m py-5">
+							<?php   echo $myContent; ?>
+						</p>
+					</div>
+					<div class="w-max">
+						<a href="<?php the_permalink() ?>">
+							<?php if ( has_post_thumbnail() ) :
+							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+						<img 
+							src="<?php echo $featured_image[0]; ?>" 
+							alt='' 
+							class="w-2/3"
+						/>
+							<?php endif; ?>
+						</a>
+					</div>
+					<div>
+						custom content if needed
+					</div>
 				</div>
 			</div>
-
 		</div>
-	</div>
 	<canvas class="" id="c"></canvas>
 
 		<?php
 	} else {
 	// Run code for single page
 		?> 
-		
+	
 <section class="h-3/6 flex flex-col justify-center text-white text-center w-sceen">
-	<a class="text-8xl font-bold capitalize m-14" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+	<a class="text-4xl sm:text-6xl md:text-8xl p-2 uppercase font-black m-14" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 </section>
-	<div class="w-full bg-gray-100">
-		<div class="w-4/5 h-screen m-auto ">
-			<div class="">
+		<div class="w-full bg-gray-100">
+			<div class="w-4/5 m-auto ">
 				<div class="flex justify-center">
-						<div class="py-5">
-								<?php 
-									$myContent = get_the_content();
-									$tags = array("<p>", "</p>");
-									$myContent = str_replace($tags, "", $myContent);
-								?>
-									
-							<p class="text-m py-5">
-								<?php   echo $myContent; ?>
-							</p>
-						</div>
-						<div class="w-max">
-							<a href="<?php the_permalink() ?>">
-								<?php if ( has_post_thumbnail() ) :
-								$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
-							<img 
-								src="<?php echo $featured_image[0]; ?>" 
-								alt='' 
-								class="w-2/3"
-							/>
-						<?php endif; ?>
-					</a>
-				</div>
-			</div>
-			<?php 
-global $post;
-
-// service content
-if( $post->ID == 13) { ?>
-	<div class="bg-blue-200">
-			<div>
-				<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap justify-between text-black w-full">	
-					<?php 
-					// Define our WP Query Parameters
-					$the_query = new WP_Query( 'posts_per_page=5' ); ?>
-					
-					
-					<?php 
-					// Start our WP Query
-					while ($the_query -> have_posts()) : $the_query -> the_post(); 
-					// Display the Post Title with Hyperlink
-					?>
-					
-					
-					<li class="p-4 flex flex-col justify-center content-center text-center m-4 sm:p-0 sm:w-5/12  md:w-1/4 h-96 border-2 bg-white">
-							
-					<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">
-						<?php if ( has_post_thumbnail() ) :
-							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'small' ); ?>
-							<img 
-								src="<?php echo $featured_image[0]; ?>" 
-								alt='' 
-								class="w-2/5 m-auto pt-10"
-							/>
-						<?php endif; ?>
-					</a>
-							<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+					<div>
 						<?php 
-							$myExcerpt = get_the_excerpt();
+							$myContent = get_the_content();
 							$tags = array("<p>", "</p>");
-							$myExcerpt = str_replace($tags, "", $myExcerpt);
-							?>
-							
-							<p class="text-sm m-5 pb-5">
-								<?php   echo $myExcerpt; ?>
-							
-							</p>
-					</li>
-					
-					
-					<?php 
-					// Repeat the process and reset once it hits the limit
-					endwhile;
-					wp_reset_postdata();
-					?>
-				</ul>
-			</div>
-		<div class="my-5">
-			<div class="text-center">
-				<h2 class="text-xl font-thin">FAQ - Frequently asked questions</h2>
-				<h2 class="text-xl font-bold capitalize mt-2">Mangler du svar på et spørgsmål?</h2>
-				<p class="text-l my-2">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. </p>
-			</div>
-			<div>
-				<details class="p-5 my-2 border-2 bg-white">
-					<summary class="py-2">Visible Summary of Details</summary> 
-					<hr>
-					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
-				</details>
-				<details class="p-5 my-2 border-2 bg-white">
-					<summary class="py-2">Visible Summary of Details</summary> 
-					<hr>
-					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
-				</details>
-				<details class="p-5 my-2 border-2 bg-white">
-					<summary class="py-2">Visible Summary of Details</summary> 
-					<hr>
-					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
-				</details>
-				<details class="p-5 my-2 border-2 bg-white">
-					<summary class="py-2">Visible Summary of Details</summary> 
-					<hr>
-					<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
-				</details>
+							$myContent = str_replace($tags, "", $myContent);
+						?>
+									
+						<p class="text-m py-5">
+							<?php   echo $myContent; ?>
+						</p>
+					</div>
+					<div class="w-max">
+						<a href="<?php the_permalink() ?>">
+							<?php if ( has_post_thumbnail() ) :
+							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+						<img 
+							src="<?php echo $featured_image[0]; ?>" 
+							alt='' 
+							class="w-2/3"
+						/>
+							<?php endif; ?>
+						</a>
+					</div>
+				</div>
+
+			<?php
+			
+	// service content 
+	global $post;
+	if( $post->ID == 13) { ?>
+		<div class="flex flex-col">
+				<div>
+					<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap justify-between text-black w-full">	
+						<?php 
+						// Define our WP Query Parameters
+						$the_query = new WP_Query( 'posts_per_page=5' ); ?>
+						
+						
+						<?php 
+						// Start our WP Query
+						while ($the_query -> have_posts()) : $the_query -> the_post(); 
+						// Display the Post Title with Hyperlink
+						?>
+						
+						
+						<li class="p-4 flex flex-col justify-center content-center text-center m-4 sm:p-0 sm:w-5/12  md:w-1/4 h-96 border-2 bg-white">
+								
+						<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">
+							<?php if ( has_post_thumbnail() ) :
+								$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'small' ); ?>
+								<img 
+									src="<?php echo $featured_image[0]; ?>" 
+									alt='' 
+									class="w-2/5 m-auto pt-10"
+								/>
+							<?php endif; ?>
+						</a>
+								<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+							<?php 
+								$myExcerpt = get_the_excerpt();
+								$tags = array("<p>", "</p>");
+								$myExcerpt = str_replace($tags, "", $myExcerpt);
+								?>
+								
+								<p class="text-sm m-5 pb-5">
+									<?php   echo $myExcerpt; ?>
+								
+								</p>
+						</li>
+						
+						
+						<?php 
+						// Repeat the process and reset once it hits the limit
+						endwhile;
+						wp_reset_postdata();
+						?>
+					</ul>
+				</div>
+				<!-- FAQ -->
+				<div class="flex flex-col my-5">
+					<div class="self-center text-center md:w-1/2">
+						<h2 class="text-xl font-thin">FAQ - Frequently asked questions</h2>
+						<h2 class="text-xl font-bold capitalize mt-2">Mangler du svar på et spørgsmål?</h2>
+						<p class="text-l my-1">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. </p>
+					</div>
+					<div class="py-5">
+						<details class="p-5 my-2 border-2 bg-white">
+							<summary class="py-2">Visible Summary of Details</summary> 
+							<hr>
+							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+						</details>
+						<details class="p-5 my-2 border-2 bg-white">
+							<summary class="py-2">Visible Summary of Details</summary> 
+							<hr>
+							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+						</details>
+						<details class="p-5 my-2 border-2 bg-white">
+							<summary class="py-2">Visible Summary of Details</summary> 
+							<hr>
+							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+						</details>
+						<details class="p-5 my-2 border-2 bg-white">
+							<summary class="py-2">Visible Summary of Details</summary> 
+							<hr>
+							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+						</details>
+					</div>
+				</div>
+				<div class="self-center text-center mb-14">
+					<p class="py-5">Fandt´du ikke svar på det du være efter? Så er du velkommen til at kontakte mig</p>
+					<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">Kontakt</a>
+				</div>
 			</div>
 		</div>
 	</div>
 
-<?php } ?>
+	<?php } ?>
 
 	</div>
-	
-
-	
-
-
 <canvas class="" id="c"></canvas>
-
-
-
-
 		<?php
 	}
 ?>
