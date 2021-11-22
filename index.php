@@ -103,7 +103,7 @@
 							</div>
 							<div class="flex flex-row m-auto py-5">
 								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">services</a>
-								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase bg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="#">kontakt</a>
+								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="#">kontakt</a>
 							</div>
 						</div>
 						<div class="w-fullmd:w-1/2">
@@ -392,7 +392,7 @@
 			global $post;
 			if( $post->ID == 137) { ?>
 				<div class="flex flex-col">
-					<div class="self-center bg-white p-5 md:my-5 w-full sm:w-full md:w-2/4">
+					<div class="self-center bg-white p-5 sm:my-80 md:my-5 w-full sm:w-full md:w-2/4">
 						<div class="text-center">
 							<h2 class="text-2xl font-bold text-primary">Kontakt os</h2>
 						</div>
