@@ -15,8 +15,10 @@
 						<h1 class="text-2xl sm:text-4xl md:text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
 						<p class="text-xl p-2">Make It simple</p>
 						<div class="py-5">
-							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">services</a>
-							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">kontakt</a>
+							<!-- Her skal du ændre id i href så det matcher det id din service side har -->
+							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=13">services</a>
+								<!-- Her skal du ændre id i href så det matcher det id din kontakt side har -->
+							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">kontakt</a>
 						</div>
 					</section>
 		<div class="w-full bg-gray-100">
@@ -24,6 +26,7 @@
 
 				<div class=" text-center py-5">
 					<div class="flex flex-row justify-between">
+						<!-- Her skal du ændre id i $id så det matcher det id din post med billederne har -->
 						<?php 
 							$id=83; 
 							$post = get_post($id); 
@@ -32,6 +35,7 @@
 							<?php echo $content; ?>
 					</div>
 					<div class="py-20">
+						<!-- Her skal du ændre id i $id så det matcher det id din service side har -->
 						<?php 
 							$id=13; 
 							$post = get_post($id); 
@@ -102,8 +106,8 @@
 								</p>
 							</div>
 							<div class="flex flex-row m-auto py-5">
-								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">services</a>
-								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="#">kontakt</a>
+								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=13">services</a>
+								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">kontakt</a>
 							</div>
 						</div>
 						<div class="w-fullmd:w-1/2">
@@ -145,8 +149,8 @@
 </section>
 		<div class="w-full bg-gray-100">
 			<div class="w-4/5 h-screen m-auto ">
-				<div class="flex flex-col justify-center">
-					<div>
+				<div class="flex flex-col md:flex-row justify-center">
+					<div class="md:w-2/3">
 						<?php 
 							$myContent = get_the_content();
 							$tags = array("<p>", "</p>");
@@ -156,21 +160,19 @@
 						<p class="text-m py-5">
 							<?php   echo $myContent; ?>
 						</p>
+						<a class="bg-primary p-1 px-5 my-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">Kontakt</a>
 					</div>
-					<div class="w-max">
+					<div class="w-max self-center my-5 order-first md:order-last">
 						<a href="<?php the_permalink() ?>">
 							<?php if ( has_post_thumbnail() ) :
 							$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
 						<img 
 							src="<?php echo $featured_image[0]; ?>" 
 							alt='' 
-							class="w-2/3"
+							class="p-5 w-3/3"
 						/>
 							<?php endif; ?>
 						</a>
-					</div>
-					<div>
-						custom content if needed
 					</div>
 				</div>
 			</div>
@@ -191,7 +193,8 @@
 
 			<?php
 			
-	// service content 
+	// Service content 
+	// Her skal du ændre id i href så det matcher det id din service side har 
 	global $post;
 	if( $post->ID == 13) { ?>
 		<div class="flex flex-col">
@@ -299,7 +302,7 @@
 				</div>
 				<div class="self-center text-center mb-14">
 					<p class="py-5">Fandt´du ikke svar på det du være efter? Så er du velkommen til at kontakte mig</p>
-					<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="#">Kontakt</a>
+					<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">Kontakt</a>
 				</div>
 			</div>
 		</div>
@@ -309,7 +312,8 @@
 
 	<?php
 			
-	// om virksomheden content 
+	// Om virksomheden content
+	// Her skal du ændre id i href så det matcher det id din "Om virksomheden" side har 
 	global $post;
 	if( $post->ID == 135) { ?>
 		<div class="flex flex-col">
@@ -324,7 +328,7 @@
 								$myContent = str_replace($tags, "", $myContent);
 							?>
 											
-							<p class="text-m py-5">
+							<p class="text-m  py-5">
 								<?php   echo $myContent; ?>
 							</p>
 						</div>
@@ -343,7 +347,7 @@
 					</div>
 				</div>
 				<div class="w-full h-full flex flex-col ">
-					<h2 class="text-2xl font-bold capitalize my-5">Vores mål</h2>
+					<h2 class="text-2xl font-bold text-center md:text-left capitalize my-5">Vores mål</h2>
 					<div class="flex flex-col sm:flex-row justify-between">
 						<div class="flex flex-col sm:w-3/5 border-2 bg-white p-5 sm:mr-1">
 							<h2 class="py-5 font-bold">Mission</h2>
@@ -388,7 +392,8 @@
 
 	<?php
 			
-			// kontakt content 
+			// kontakt content
+			// Her skal du ændre id i href så det matcher det id din "kontakt" side har  
 			global $post;
 			if( $post->ID == 137) { ?>
 				<div class="flex flex-col">
@@ -398,10 +403,11 @@
 						</div>
 						<?php the_content(); ?>
 						<div>
-							<ul class="flex justify-between">
+							<ul class="flex flex-col sm:flex-row justify-between">
 								<li> <p>Tlf: +45 31 51 27 60</p> </li>
 								<li> <p>info@theilmann-it.dk</p> </li>
 								<li> <p>Teglgård 1 6330 Vilsbæk</p> </li>
+								<li> <p>CVR: 42049131</p> </li>
 							</ul>
 						</div>
 					</div>
