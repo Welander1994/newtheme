@@ -36,12 +36,25 @@
                                 <?php wp_nav_menu( $defaults ); ?>
                     </div>
                     <div class="block sm:hidden self-center">
-                        <i class="text-xl fas fa-bars"></i>
+                        <i class="text-xl fas fa-bars" onclick="burgermenu()"></i>
                     </div>
 
                 </div>
         
             </div>
         </div> 
+
+
+
     </header>
+
+    <div id="menu" class="fixed w-full bg-primary h-screen text-center text-white sm:hidden" style="transition: left 1s ease-in-out; left: -100%; ">
+            <?php $defaults = array( 
+               'container_class' => 'w-full', 
+                'menu_class'      => 'flex flex-row justify-around ', 
+                'items_wrap'      => '<ul class="flex flex-col h-96 justify-evenly">%3$s</ul>',
+                'add_a_class'     => 'mt-5 border-b border-transparent text-2xl hover:border-gray-500 transition duration-500 ease-in-out capitalize ',
+            ); ?>
+            <?php wp_nav_menu( $defaults ); ?>
+        </div>
 

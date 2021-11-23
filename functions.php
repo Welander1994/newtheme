@@ -9,6 +9,7 @@ add_theme_support( 'post-thumbnails' );
 
 function additional_custom_assets() {
     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/tailwind.css' ); 
+    wp_enqueue_script( 'uniquescript', get_template_directory_uri() . '/javascript.js' ); 
 }
 add_action( 'wp_enqueue_scripts', 'additional_custom_assets' );
 
