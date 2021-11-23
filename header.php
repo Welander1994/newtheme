@@ -48,7 +48,7 @@
 
     </header>
 
-    <div id="menu" class="fixed w-full bg-primary h-screen text-center text-white sm:hidden" style="transition: left 1s ease-in-out; left: -100%; ">
+    <div id="menu" class="fixed w-full bg-primary h-screen text-center text-white sm:hidden z-50" style="transition: left 1s ease-in-out; left: -100%; ">
             <?php $defaults = array( 
                'container_class' => 'w-full', 
                 'menu_class'      => 'flex flex-row justify-around ', 
