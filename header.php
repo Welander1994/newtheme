@@ -14,7 +14,7 @@
         <div class="w-full bg-primary flex justify-center text-white bg-secondary ">
                 <div class="flex pl-1 flex-row justify-end w-4/5 ">
                     <ul class="flex flex-row">
-                        <li class="ml-5 text-xs sm:text-base text-white text-opacity-50">Telf: +45 31 51 27 60</li>
+                        <li class="ml-5 text-xs sm:text-base text-white text-opacity-50">Tlf: +45 31 51 27 60</li>
                         <li class="ml-5 text-xs sm:text-base text-white text-opacity-50">info@theilmann-IT.dk</li>
                     </ul>
                 </div>
