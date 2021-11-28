@@ -1,3 +1,16 @@
+<?php 
+
+// Global varibles
+
+$service = 13;
+$kontakt = 137;
+$omVirksomheden = 135;
+$produktImages = 83;
+$forside = 11;
+$domain = "https://thisisatest.dev/?page_id=";
+
+?>
+
 
 <footer class="w-full py-6 bg-3 flex flex-col justify-center text-white">
     <div class="m-auto w-5/6 flex flex-col md:flex-row justify-between border-b border-gray-500">  
@@ -9,25 +22,25 @@
         <div class="flex justify-between w-full md:w-3/6 text-sm">
             <!-- Her skal du ændre id i href så det matcher det id din "service" side har -->
             <ul>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=13"><b>Service</b></a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=13">Ydelser</a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=13">FAQ</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $service; ?>"><b>Service</b></a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $service; ?>">Ydelser</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $service; ?>">FAQ</a></li>
             </ul>
 
             <!-- Her skal du ændre id i href så det matcher det id din "om virksomheden" side har -->
             <ul>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=135"><b>Om Virksomheden</b></a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=135">Vison</a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=135">Mission</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $omVirksomheden; ?>"><b>Om Virksomheden</b></a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $omVirksomheden; ?>">Vison</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $omVirksomheden; ?>">Mission</a></li>
             </ul>
             
             <!-- Her skal du ændre id i href så det matcher det id din "kontakt" side har -->
             <ul>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=137"><b>Kontakt</b></a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=137">Tlf: +45 31 51 27 60</a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=137">info@theilmann-it.dk</a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=137">Teglgård 1 6330 Vilsbæk</a></li>
-                <li class="pb-2"><a href="https://thisisatest.dev/?page_id=137">CVR: 42049131</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>"><b>Kontakt</b></a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">Tlf: +45 31 51 27 60</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">info@theilmann-it.dk</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">Teglgård 1 6330 Vilsbæk</a></li>
+                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">CVR: 42049131</a></li>
             </ul>
         </div>
     </div>

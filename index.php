@@ -1,5 +1,17 @@
 <?php get_header();?>
 
+<?php 
+// Global varibles
+
+$service = 13;
+$kontakt = 137;
+$omVirksomheden = 135;
+$produktImages = 83;
+$forside = 11;
+$domain = "https://thisisatest.dev/?page_id=";
+
+?>
+
 <?php if ( is_front_page() ) { ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 <div class="body z-50">
@@ -16,9 +28,9 @@
 						<p class="text-xl p-2">Make It simple</p>
 						<div class="py-5">
 							<!-- Her skal du ændre id i href så det matcher det id din service side har -->
-							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=13">services</a>
+							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $service; ?>">services</a>
 								<!-- Her skal du ændre id i href så det matcher det id din kontakt side har -->
-							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">kontakt</a>
+							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $kontakt; ?>">kontakt</a>
 						</div>
 					</section>
 		<div class="w-full bg-gray-100">
@@ -28,7 +40,7 @@
 					<div class="flex flex-row justify-between">
 						<!-- Her skal du ændre id i $id så det matcher det id din post med billederne har -->
 						<?php 
-							$id=83; 
+							$id = $produktImages; 
 							$post = get_post($id); 
 							$content = apply_filters('the_content', $post->post_content); 
 						?>
@@ -37,7 +49,7 @@
 					<div class="py-20">
 						<!-- Her skal du ændre id i $id så det matcher det id din service side har -->
 						<?php 
-							$id=13; 
+							$id=$service; 
 							$post = get_post($id); 
 							$content = apply_filters('the_content', $post->post_content); 
 						?>
@@ -196,7 +208,7 @@
 	// Service content 
 	// Her skal du ændre id i href så det matcher det id din service side har 
 	global $post;
-	if( $post->ID == 13) { ?>
+	if( $post->ID == $service) { ?>
 		<div class="flex flex-col">
 		<div class="flex justify-center">
 					<div>
@@ -315,7 +327,7 @@
 	// Om virksomheden content
 	// Her skal du ændre id i href så det matcher det id din "Om virksomheden" side har 
 	global $post;
-	if( $post->ID == 135) { ?>
+	if( $post->ID == $omVirksomheden) { ?>
 		<div class="flex flex-col">
 			<div>
 				<div class="w-full h-full py-20 flex flex-col md:flex-row justify-evenly ">
@@ -395,9 +407,9 @@
 			// kontakt content
 			// Her skal du ændre id i href så det matcher det id din "kontakt" side har  
 			global $post;
-			if( $post->ID == 137) { ?>
+			if( $post->ID == $kontakt) { ?>
 				<div class="flex flex-col">
-					<div class="self-center bg-white p-5 sm:my-80 md:my-5 w-full sm:w-full md:w-2/4">
+					<div class="self-center bg-white p-5 sm:my-80 md:my-5 w-full sm:w-full md:w-3/4">
 						<div class="text-center">
 							<h2 class="text-2xl font-bold text-primary">Kontakt os</h2>
 						</div>
