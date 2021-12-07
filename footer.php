@@ -16,10 +16,10 @@ $domain = "https://thisisatest.dev/?page_id=";
     <div class="m-auto w-5/6 flex flex-col md:flex-row justify-between border-b border-gray-500">  
         <div class="w-full py-4 md:w-2/4">
             <h1 class="pb-2 text-m uppercase font-medium w-6"><?php bloginfo( 'name' ); ?></h1>
-            <p class="py-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            <p class="py-2"><?php echo get_bloginfo('description')?></p>
         </div>
 
-        <div class="flex justify-between w-full md:w-3/6 text-sm">
+        <div class="flex justify-between w-full md:w-2/5 text-xs md:text-sm">
             <!-- Her skal du ændre id i href så det matcher det id din "service" side har -->
             <ul>
                 <li class="pb-2"><a href="<?php echo $domain; echo $service; ?>"><b>Service</b></a></li>

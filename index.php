@@ -1,8 +1,8 @@
 <?php get_header();?>
 
 <?php 
-// Global varibles
 
+// Global varibles
 $service = 13;
 $kontakt = 137;
 $omVirksomheden = 135;
@@ -28,7 +28,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 						<p class="text-xl p-2">Make It simple</p>
 						<div class="py-5">
 							<!-- Her skal du ændre id i href så det matcher det id din service side har -->
-							<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $service; ?>">services</a>
+							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $service; ?>">services</a>
 								<!-- Her skal du ændre id i href så det matcher det id din kontakt side har -->
 							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-white text-xl text-white font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $kontakt; ?>">kontakt</a>
 						</div>
@@ -39,25 +39,30 @@ $domain = "https://thisisatest.dev/?page_id=";
 				<div class=" text-center py-5">
 					<div class="flex flex-row justify-between">
 						<!-- Her skal du ændre id i $id så det matcher det id din post med billederne har -->
-						<?php 
+<!-- 						<?php 
 							$id = $produktImages; 
 							$post = get_post($id); 
 							$content = apply_filters('the_content', $post->post_content); 
 						?>
-							<?php echo $content; ?>
+							<?php echo $content; ?> -->
 					</div>
-					<div class="py-20">
+					<div class="m-auto py-20 w-3/4">
 						<!-- Her skal du ændre id i $id så det matcher det id din service side har -->
 						<?php 
 							$id=$service; 
 							$post = get_post($id); 
 							$content = apply_filters('the_content', $post->post_content); 
 						?>
-							<h2 class="text-2xl py-5 font-bold"><?php echo get_the_title( $ID );?> </h2>
+							<!-- <h2 class="text-2xl pt-5 font-light"><?php echo get_the_title( $ID );?> </h2> -->
+							<h3 class="text-xl pb-5 font-bold">Vi stiler efter at skabe bedre it-sikkerhedsgrundlag, så vi sammen kan udvikle os</h3>
 							<p><?php echo $content; ?> </p>
+							<br>
+							<a class="bg-primary p-1 px-5 mt-5 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $service; ?>">services</a>
 					</div>
+					
 				</div>
-			<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap justify-between text-black w-full">	
+<!-- 
+			<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap justify-center text-black w-full">	
 				<?php 
 				// Define our WP Query Parameters
 				$the_query = new WP_Query( 'posts_per_page=5' ); ?>
@@ -70,7 +75,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 				?>
 				
 				
-				<li class="p-4 flex flex-col justify-center content-center text-center m-4 sm:p-0 sm:w-5/12  md:w-1/4 h-96 border-2 bg-white">
+				<li class="p-4 flex flex-col justify-center content-center text-center m-4 sm:p-0 sm:w-5/12 md:w-2/4 h-96 border-2 bg-white">
 						
 				<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">
 					<?php if ( has_post_thumbnail() ) :
@@ -101,12 +106,12 @@ $domain = "https://thisisatest.dev/?page_id=";
 				endwhile;
 				wp_reset_postdata();
 				?>
-			</ul>
+			</ul> -->
 					<!-- this is the section where we descript the owner -->
 					<div class="w-full h-full py-20 flex flex-col sm:flex-row justify-evenly md:justify-center">
 						<div class="w-full sm:w-1/3 flex flex-wrap content-center order-last sm:order-none">
 							<div class="text-center pt-5 sm:pt-0 sm:text-left">
-								<a class="text-2xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+								<a class="text-2xl font-light capitalize mt-5" href="<?php the_permalink() ?>">OM THEILMANN IT/AUTOMATION</a>
 								<?php 
 									$myExcerpt = get_the_excerpt();
 									$tags = array("<p>", "</p>");
@@ -117,8 +122,8 @@ $domain = "https://thisisatest.dev/?page_id=";
 									<?php   echo $myExcerpt; ?>
 								</p>
 							</div>
-							<div class="flex flex-row m-auto py-5">
-								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=13">services</a>
+							<div class="flex flex-col md:flex-row m-auto py-5">
+								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=135">Om virksomheden</a>
 								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">kontakt</a>
 							</div>
 						</div>
@@ -218,7 +223,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 							$myContent = str_replace($tags, "", $myContent);
 						?>
 									
-						<p class="text-m py-5">
+						<p class="text-m py-5 w-2/3 m-auto">
 							<?php   echo $myContent; ?>
 						</p>
 					</div>
@@ -236,7 +241,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 					</div>
 				</div>
 				<div>
-					<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap justify-between text-black w-full">	
+					<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap md:w-2/3 m-auto justify-center text-black w-full">	
 						<?php 
 						// Define our WP Query Parameters
 						$the_query = new WP_Query( 'posts_per_page=5' ); ?>
@@ -249,19 +254,18 @@ $domain = "https://thisisatest.dev/?page_id=";
 						?>
 						
 						
-						<li class="p-4 flex flex-col justify-center content-center text-center m-4 sm:p-0 sm:w-5/12  md:w-1/4 h-96 border-2 bg-white">
+						<li class="p-4 flex flex-col justify-center content-center text-center mr-4 sm:p-0 sm:w-5/12  md:w-2/4 h-96 border-2 bg-white">
 								
-						<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">
+
 							<?php if ( has_post_thumbnail() ) :
 								$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'small' ); ?>
 								<img 
 									src="<?php echo $featured_image[0]; ?>" 
 									alt='' 
-									class="w-2/5 m-auto pt-10"
+									class="w-2/5 md:w-1/5 m-auto pt-10"
 								/>
 							<?php endif; ?>
-						</a>
-								<a class="text-xl font-bold capitalize mt-5" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+								<p class="text-xl font-bold capitalize mt-5"><?php the_title(); ?></p>
 							<?php 
 								$myExcerpt = get_the_excerpt();
 								$tags = array("<p>", "</p>");
@@ -282,38 +286,54 @@ $domain = "https://thisisatest.dev/?page_id=";
 						?>
 					</ul>
 				</div>
+
+				<div class="flex flex-col justify-center w-full my-5">
+					<div class="self-center">
+						<h2 class="text-2xl font-bold capitalize mt-5">Værdier</h2>
+					</div>
+					<div class="py-5 self-center">
+						<p class="md:w-2/3 md:m-auto md:text-left">
+						I takt med at de danske virksomheder bliver mere digitaliseret, står vi alle over for en større udfordring, da hackerne i takt med vores udvikling bliver mere snedige og effektive. Det er derfor vigtigt at du sikrer din virksomhed. Mangler du hjælp til hvordan du beskytter dig og din virksomhed, så kommer der her et par gode råd.
+						</p>
+					</div>
+					<div class="md:w-2/3 self-center">
+						
+						<ul>
+							<li class="py-5">
+								<h2 class="font-bold">Gode råd 1 - Installer sikkerhedspakke</h2>
+								<p>Alle virksomhedens pc’er bør have en sikkerhedspakke installeret, som indeholder følgende: En firewall, Et antivirusprogram, Et spamfilter og Et phisingfilter</p>
+							</li>
+							<li class="py-5">
+								<h2 class="font-bold">Gode råd 2 - Backup din data</h2>
+								<p>I tilfælde af at hacker har fået adgang til jeres data, så er det vigtigt at man har lavet en kopi. Så hvis de sletter data, at man kan generaer det igen</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+
 				<!-- FAQ -->
 				<div class="flex flex-col my-5">
 					<div class="self-center text-center md:w-1/2">
-						<h2 class="text-xl font-thin">FAQ - Frequently asked questions</h2>
-						<h2 class="text-xl font-bold capitalize mt-2">Mangler du svar på et spørgsmål?</h2>
-						<p class="text-l my-1">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. </p>
+						<h2 class="text-xl font-thin">FAQ <!-- - Frequently asked questions --></h2>
+						<h2 class="text-xl font-bold mt-2">Mangler du svar på et spørgsmål?</h2>
+						<p class="text-l my-1">Få et overblik over de mest stillede spørgsmål og svarene til dem.</p>
 					</div>
-					<div class="py-5">
-						<details class="p-5 my-2 border-2 bg-white">
-							<summary class="py-2">Visible Summary of Details</summary> 
+					<div class="py-5 md:w-2/3 self-center">
+						<details class="p-5 my-2 border-2 bg-white pointer-events-auto">
+							<summary class="py-2">Hvorfor skal ens it programmer være opdateret?</summary> 
 							<hr>
-							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+							<p class="py-2">Hacker arbejde konstant på at finde smurt huller i programmer og jo længere tid siden jeres programmer er opdateret. desto større er chancen for at de har fundet en vej ind.</p> 
 						</details>
 						<details class="p-5 my-2 border-2 bg-white">
-							<summary class="py-2">Visible Summary of Details</summary> 
+							<summary class="py-2"> Hvad er et godt adgangskode?</summary> 
 							<hr>
-							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
+							<p class="py-2">Et godt kodeord skal helst indholde over 8 cifre, kombiner store og små bogstaver, tal og symboler. Før at beskytter dig i tilfælde af et at dine kodeord er blevet hacket, så brug aldrig det samme kodeord til flere kontorer</p> 
 						</details>
-						<details class="p-5 my-2 border-2 bg-white">
-							<summary class="py-2">Visible Summary of Details</summary> 
-							<hr>
-							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
-						</details>
-						<details class="p-5 my-2 border-2 bg-white">
-							<summary class="py-2">Visible Summary of Details</summary> 
-							<hr>
-							<p class="py-2"> This part won't be visible until the user chooses to see it.</p> 
-						</details>
+
 					</div>
 				</div>
 				<div class="self-center text-center mb-14">
-					<p class="py-5">Fandt´du ikke svar på det du være efter? Så er du velkommen til at kontakte mig</p>
+					<p class="py-5">Fandt du ikke svar på det du var efter? Så er du velkommen til at kontakte mig</p>
 					<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">Kontakt</a>
 				</div>
 			</div>
@@ -363,11 +383,11 @@ $domain = "https://thisisatest.dev/?page_id=";
 					<div class="flex flex-col sm:flex-row justify-between">
 						<div class="flex flex-col sm:w-3/5 border-2 bg-white p-5 sm:mr-1">
 							<h2 class="py-5 font-bold">Mission</h2>
-							<p>Stet clita kasd gubergren, no sea duo takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea duo.</p>
+							<p>Vi stiler efter at skabe bedre sikkerhedsgrundlag for danske virksomheder, så vi sammen kan udvikle os </p>
 						</div>
 						<div class="flex flex-col sm:w-3/5 border-2 bg-white p-5 sm:ml-1">
 							<h2 class="py-5 font-bold">Vision</h2>
-							<p>Stet clita kasd gubergren, no sea duo takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea duo.</p>
+							<p>Vi hjælper virksomheder med at sikre deres data. ved at implementer sikkerhedsløsninger, for SMV’er i Sydjylland</p>
 						</div>
 					</div>
 				</div>
@@ -377,22 +397,23 @@ $domain = "https://thisisatest.dev/?page_id=";
 					</div>
 					<div class="p-5 self-center">
 						<p>
-						Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea.
+						Vi vil sikre din virksomhed, så i trygt kan varetage jeres kunder og deres behov. Ved at styrke jeres it-sikkerhed, skaber vi mere 
+
 						</p>
 					</div>
 					<div class="w-4/5 self-center">
 						<ul>
 							<li class="py-5">
 								<h2 class="font-bold">Value proposition 1.</h2>
-								<p>Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum, ipsum dolor sit amet t accusam et justo duo dolores et ea rebum?</p>
+								<p>Hjælp til at implementere IT-sikkerhed og opdatering af nuværende produkter og systemer</p>
 							</li>
 							<li class="py-5">
 								<h2 class="font-bold">Value proposition 1.</h2>
-								<p>Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum, ipsum dolor sit amet t accusam et justo duo dolores et ea rebum?</p>
+								<p>Skaber tryghed for virksomheden og deres kunder</p>
 							</li>
 							<li class="py-5">
 								<h2 class="font-bold">Value proposition 1.</h2>
-								<p>Lorem ipsum dolor sit amet t accusam et justo duo dolores et ea rebum, ipsum dolor sit amet t accusam et justo duo dolores et ea rebum?</p>
+								<p>Sikre deres kunders data mod potentiel IT-kriminalitet</p>
 							</li>
 						</ul>
 					</div>
@@ -409,7 +430,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 			global $post;
 			if( $post->ID == $kontakt) { ?>
 				<div class="flex flex-col">
-					<div class="self-center bg-white p-5 sm:my-80 md:my-5 w-full sm:w-full md:w-3/4">
+					<div class="self-center bg-white p-5 sm:my-80 md:my-0 w-full md:w-3/4">
 						<div class="text-center">
 							<h2 class="text-2xl font-bold text-primary">Kontakt os</h2>
 						</div>
