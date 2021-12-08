@@ -329,6 +329,11 @@ $domain = "https://thisisatest.dev/?page_id=";
 							<hr>
 							<p class="py-2">Et godt kodeord skal helst indholde over 8 cifre, kombiner store og små bogstaver, tal og symboler. Før at beskytter dig i tilfælde af et at dine kodeord er blevet hacket, så brug aldrig det samme kodeord til flere kontorer</p> 
 						</details>
+						<details class="p-5 my-2 border-2 bg-white">
+							<summary class="py-2">Hvad er IT-kriminalitet?</summary> 
+							<hr>
+							<p class="py-2">Disse forbrydelser går ud på at skade en persons eller virksomheds it-system. Det er forbrydelser, der angriber computeren. Fx hacking, distribuering af malware, fx vira, orme og trojanske heste eller såkaldte DDoS-angreb, der går ud på at overbelaste en internetside.</p> 
+						</details>
 
 					</div>
 				</div>
