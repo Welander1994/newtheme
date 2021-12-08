@@ -127,7 +127,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">kontakt</a>
 							</div>
 						</div>
-						<div class="w-fullmd:w-1/2">
+						<div class="">
 							<a href="<?php the_permalink() ?>">
 								<?php if ( has_post_thumbnail() ) :
 									$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
@@ -355,7 +355,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 	if( $post->ID == $omVirksomheden) { ?>
 		<div class="flex flex-col">
 			<div>
-				<div class="w-full h-full py-20 flex flex-col md:flex-row justify-evenly ">
+				<div class="w-full h-full m-auto py-20 flex flex-col md:flex-row justify-evenly ">
 					<div class="w-full sm:w-1/3 flex flex-wrap order-last md:order-none">
 						<div class="text-center pt-5 sm:pt-0 sm:text-left">
 							<a class="text-2xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">Om theilmann IT/Automation</a>
@@ -383,8 +383,8 @@ $domain = "https://thisisatest.dev/?page_id=";
 						</a>
 					</div>
 				</div>
-				<div class="w-full h-full flex flex-col ">
-					<h2 class="text-2xl font-bold text-center md:text-left capitalize my-5">Vores mål</h2>
+				<div class="w-2/3 m-auto h-full flex flex-col ">
+					<h2 class="text-2xl font-bold text-center  capitalize my-5">Vores mål</h2>
 					<div class="flex flex-col sm:flex-row justify-between">
 						<div class="flex flex-col sm:w-3/5 border-2 bg-white p-5 sm:mr-1">
 							<h2 class="py-5 font-bold">Mission</h2>
@@ -406,18 +406,18 @@ $domain = "https://thisisatest.dev/?page_id=";
 
 						</p>
 					</div>
-					<div class="w-4/5 self-center">
+					<div class="w-2/3 self-center">
 						<ul>
 							<li class="py-5">
 								<h2 class="font-bold">Value proposition 1.</h2>
 								<p>Hjælp til at implementere IT-sikkerhed og opdatering af nuværende produkter og systemer</p>
 							</li>
 							<li class="py-5">
-								<h2 class="font-bold">Value proposition 1.</h2>
+								<h2 class="font-bold">Value proposition 2.</h2>
 								<p>Skaber tryghed for virksomheden og deres kunder</p>
 							</li>
 							<li class="py-5">
-								<h2 class="font-bold">Value proposition 1.</h2>
+								<h2 class="font-bold">Value proposition 3.</h2>
 								<p>Sikre deres kunders data mod potentiel IT-kriminalitet</p>
 							</li>
 						</ul>
