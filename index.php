@@ -34,7 +34,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 						</div>
 					</section>
 		<div class="w-full bg-gray-100">
-			<div class="w-4/5 m-auto ">
+			<div class="w-2/3 m-auto ">
 
 				<div class=" text-center py-5">
 					<div class="flex flex-row justify-between">
@@ -57,7 +57,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 							<h3 class="text-xl pb-5 font-bold">Vi stiler efter at skabe bedre it-sikkerhedsgrundlag, så vi sammen kan udvikle os</h3>
 							<p><?php echo $content; ?> </p>
 							<br>
-							<a class="bg-primary p-1 px-5 mt-5 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $service; ?>">services</a>
+							<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="<?php echo $domain; echo $service; ?>">services</a>
 					</div>
 					
 				</div>
@@ -111,7 +111,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 					<div class="w-full h-full py-20 flex flex-col sm:flex-row justify-evenly md:justify-center">
 						<div class="w-full sm:w-1/3 flex flex-wrap content-center order-last sm:order-none">
 							<div class="text-center pt-5 sm:pt-0 sm:text-left">
-								<a class="text-2xl font-light capitalize mt-5" href="<?php the_permalink() ?>">OM THEILMANN IT/AUTOMATION</a>
+								<p class="text-2xl font-light capitalize mt-5">OM THEILMANN IT/AUTOMATION</p>
 								<?php 
 									$myExcerpt = get_the_excerpt();
 									$tags = array("<p>", "</p>");
@@ -123,7 +123,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 								</p>
 							</div>
 							<div class="flex flex-col md:flex-row m-auto py-5">
-								<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=135">Om virksomheden</a>
+								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=135">Om virksomheden</a>
 								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">kontakt</a>
 							</div>
 						</div>
@@ -215,11 +215,11 @@ $domain = "https://thisisatest.dev/?page_id=";
 	global $post;
 	if( $post->ID == $service) { ?>
 		<div class="flex flex-col">
-		<div class="flex justify-center">
+		<div class="flex justify-center md:w-2/3 self-center">
 					<div>
 						<?php 
 							$myContent = get_the_content();
-							$tags = array("<p>", "</p>");
+							$tags = array("<p> ", "</p>");
 							$myContent = str_replace($tags, "", $myContent);
 						?>
 									
@@ -339,7 +339,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 				</div>
 				<div class="self-center text-center mb-14">
 					<p class="py-5">Fandt du ikke svar på det du var efter? Så er du velkommen til at kontakte mig</p>
-					<a class="bg-primary p-1 px-5 m-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">Kontakt</a>
+					<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">Kontakt</a>
 				</div>
 			</div>
 		</div>
