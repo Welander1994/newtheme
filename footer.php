@@ -22,25 +22,25 @@ $domain = "https://thisisatest.dev/?page_id=";
         <div class="flex justify-between w-full md:w-2/5 text-xs md:text-sm">
             <!-- Her skal du ændre id i href så det matcher det id din "service" side har -->
             <ul>
-                <li class="pb-2"><a href="<?php echo $domain; echo $service; ?>"><b>Service</b></a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $service; ?>">Ydelser</a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $service; ?>">FAQ</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $service; ?>"><b>Service</b></a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $service; ?>">Ydelser</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $service; ?>">FAQ</a></li>
             </ul>
 
             <!-- Her skal du ændre id i href så det matcher det id din "om virksomheden" side har -->
             <ul>
-                <li class="pb-2"><a href="<?php echo $domain; echo $omVirksomheden; ?>"><b>Om Virksomheden</b></a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $omVirksomheden; ?>">Vison</a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $omVirksomheden; ?>">Mission</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $omVirksomheden; ?>"><b>Om Virksomheden</b></a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $omVirksomheden; ?>">Vison</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $omVirksomheden; ?>">Mission</a></li>
             </ul>
             
             <!-- Her skal du ændre id i href så det matcher det id din "kontakt" side har -->
             <ul>
-                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>"><b>Kontakt</b></a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">Tlf: +45 31 51 27 60</a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">info@theilmann-it.dk</a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">Teglgård 1 6330 Vilsbæk</a></li>
-                <li class="pb-2"><a href="<?php echo $domain; echo $kontakt; ?>">CVR: 42049131</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $kontakt; ?>"><b>Kontakt</b></a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $kontakt; ?>">Tlf: +45 31 51 27 60</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $kontakt; ?>">info@theilmann-it.dk</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $kontakt; ?>">Teglgård 1 6330 Vilsbæk</a></li>
+                <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $kontakt; ?>">CVR: 42049131</a></li>
             </ul>
         </div>
     </div>
