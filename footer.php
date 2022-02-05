@@ -2,12 +2,12 @@
 
 // Global varibles
 
-$service = 13;
-$kontakt = 137;
-$omVirksomheden = 135;
+$service = 23;
+$kontakt = 18;
+$omVirksomheden = 21;
 $produktImages = 83;
-$forside = 11;
-$domain = "https://thisisatest.dev/?page_id=";
+$forside = 15;
+$domain = "https://we-lander.dk/Theilmann-it-automation/?p=";
 
 ?>
 
@@ -15,13 +15,18 @@ $domain = "https://thisisatest.dev/?page_id=";
 <footer class="w-full py-6 bg-3 flex flex-col justify-center text-white">
     <div class="m-auto w-5/6 flex flex-col md:flex-row justify-between border-b border-gray-500">  
         <div class="w-full py-4 md:w-2/4">
-            <h1 class="pb-2 text-m uppercase font-medium w-6"><?php bloginfo( 'name' ); ?></h1>
+            <h1 class="pb-2 text-m uppercase font-medium "><?php bloginfo( 'name' ); ?></h1>
             <p class="py-2"><?php echo get_bloginfo('description')?></p>
+				<ul class="flex">
+					<li class="mr-5 mb-2 text-xl border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="https://www.facebook.com/" target="_blank""><i class="fab fa-facebook-f"></i></a></li>
+                	<li class="mr-5 mb-2 text-xl border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="https://dk.linkedin.com/" target="_blank""><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
         </div>
 
         <div class="flex justify-between w-full md:w-2/5 text-xs md:text-sm">
             <!-- Her skal du ændre id i href så det matcher det id din "service" side har -->
             <ul>
+
                 <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $service; ?>"><b>Service</b></a></li>
                 <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $service; ?>">Ydelser</a></li>
                 <li class="mb-2 border-b border-transparent hover:border-gray-500 transition duration-500 ease-in-out"><a href="<?php echo $domain; echo $service; ?>">FAQ</a></li>

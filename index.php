@@ -3,12 +3,12 @@
 <?php 
 
 // Global varibles
-$service = 13;
-$kontakt = 137;
-$omVirksomheden = 135;
+$service = 23;
+$kontakt = 18;
+$omVirksomheden = 21;
 $produktImages = 83;
-$forside = 11;
-$domain = "https://thisisatest.dev/?page_id=";
+$forside = 15;
+$domain = "https://we-lander.dk/Theilmann-it-automation/?p=";
 
 ?>
 
@@ -23,8 +23,8 @@ $domain = "https://thisisatest.dev/?page_id=";
 
 					<section class="h-screen flex flex-col justify-center text-white text-center w-sceen">
 <!-- 						<h1 class="text-6xl p-2 uppercase font-black" ><?php bloginfo( 'name' ); ?></h1> -->
-						<h1 class="text-4xl sm:text-6xl md:text-8xl p-2 uppercase font-black" >theilmann</h1>
-						<h1 class="text-2xl sm:text-4xl md:text-6xl p-0 uppercase font-normal tracking-widest" >it/automation</h1>
+						<h1 class="text-4xl sm:text-6xl md:text-8xl p-2 uppercase font-normal" >theilmann</h1>
+						<h1 class="text-2xl sm:text-4xl md:text-6xl p-0 uppercase font-thin tracking-widest" >it/automation</h1>
 						<p class="text-xl p-2">Make It simple</p>
 						<div class="py-5">
 							<!-- Her skal du ændre id i href så det matcher det id din service side har -->
@@ -34,7 +34,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 						</div>
 					</section>
 		<div class="w-full bg-gray-100">
-			<div class="w-2/3 m-auto ">
+			<div class="md:w-2/3 m-auto ">
 
 				<div class=" text-center py-5">
 					<div class="flex flex-row justify-between">
@@ -46,7 +46,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 						?>
 							<?php echo $content; ?> -->
 					</div>
-					<div class="m-auto py-20 w-3/4">
+					<div class="m-auto py-20 w-2/3">
 						<!-- Her skal du ændre id i $id så det matcher det id din service side har -->
 						<?php 
 							$id=$service; 
@@ -110,7 +110,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 					<!-- this is the section where we descript the owner -->
 					<div class="w-full h-full py-20 flex flex-col sm:flex-row justify-evenly md:justify-center">
 						<div class="w-full sm:w-1/3 flex flex-wrap content-center order-last sm:order-none">
-							<div class="text-center pt-5 sm:pt-0 sm:text-left">
+							<div class="w-3/4 text-center m-auto pt-5 sm:pt-0 sm:text-left">
 								<p class="text-2xl font-light capitalize mt-5">OM THEILMANN IT/AUTOMATION</p>
 								<?php 
 									$myExcerpt = get_the_excerpt();
@@ -123,12 +123,12 @@ $domain = "https://thisisatest.dev/?page_id=";
 								</p>
 							</div>
 							<div class="flex flex-col md:flex-row m-auto py-5">
-								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=135">Om virksomheden</a>
-								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">kontakt</a>
+								<a class="bg-transperent w-max p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="<?php echo $domain; echo $omVirksomheden; ?>">Om virksomheden</a>
+								<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="<?php echo $domain; echo $kontakt; ?>">kontakt</a>
 							</div>
 						</div>
 						<div class="">
-							<a href="<?php the_permalink() ?>">
+							<a href="<?php echo $domain; echo $omVirksomheden; ?>">
 								<?php if ( has_post_thumbnail() ) :
 									$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
 									<img 
@@ -167,7 +167,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 		<div class="w-full bg-gray-100">
 			<div class="w-4/5 h-screen m-auto ">
 				<div class="flex flex-col md:flex-row justify-center">
-					<div class="md:w-2/3">
+					<div class="md:w-3/4">
 						<?php 
 							$myContent = get_the_content();
 							$tags = array("<p>", "</p>");
@@ -177,7 +177,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 						<p class="text-m py-5">
 							<?php   echo $myContent; ?>
 						</p>
-						<a class="bg-primary p-1 px-5 my-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">Kontakt</a>
+						<a class="bg-primary p-1 px-5 my-2 rounded-m text-white text-xl font-medium uppercase hover:bg-white hover:text-black transition duration-500 ease-in-out" href="<?php echo $domain; echo $kontakt; ?>">Kontakt</a>
 					</div>
 					<div class="w-max self-center my-5 order-first md:order-last">
 						<a href="<?php the_permalink() ?>">
@@ -202,7 +202,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 		?> 
 	
 <section class="h-3/6 flex flex-col justify-center text-white text-center w-sceen">
-	<a class="text-4xl sm:text-4xl md:text-6xl p-2 uppercase font-black m-14" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+	<a class="text-4xl sm:text-4xl md:text-6xl p-2 uppercase font-normal m-14" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 </section>
 		<div class="w-full bg-gray-100">
 			<div class="w-4/5 m-auto ">
@@ -223,7 +223,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 							$myContent = str_replace($tags, "", $myContent);
 						?>
 									
-						<p class="text-m py-5 w-2/3 m-auto">
+						<p class="text-m py-5 md:w-2/3 m-auto">
 							<?php   echo $myContent; ?>
 						</p>
 					</div>
@@ -234,14 +234,14 @@ $domain = "https://thisisatest.dev/?page_id=";
 						<img 
 							src="<?php echo $featured_image[0]; ?>" 
 							alt='' 
-							class="w-2/3"
+							class="md:w-2/3"
 						/>
 							<?php endif; ?>
 						</a>
 					</div>
 				</div>
 				<div>
-					<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap md:w-2/3 m-auto justify-center text-black w-full">	
+					<ul class="flex flex-col sm:flex-row sm:flex-wrap md:flex-row md:flex-nowrap md:w-2/3 m-auto mt-5 justify-center text-black w-full">	
 						<?php 
 						// Define our WP Query Parameters
 						$the_query = new WP_Query( 'posts_per_page=5' ); ?>
@@ -254,9 +254,9 @@ $domain = "https://thisisatest.dev/?page_id=";
 						?>
 						
 						
-						<li class="p-4 flex flex-col justify-center content-center text-center mr-4 sm:p-0 sm:w-5/12  md:w-2/4 h-96 border-2 bg-white">
+						<li class="p-0 flex flex-col justify-center content-center text-center mb-5 md:mb-0  mr-4 sm:p-0 sm:w-5/12  md:w-2/4 h-96 border-2 bg-white">
 								
-
+							<p class="text-xl font-bold capitalize mt-5"><?php the_title(); ?></p>
 							<?php if ( has_post_thumbnail() ) :
 								$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'small' ); ?>
 								<img 
@@ -265,7 +265,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 									class="w-2/5 md:w-1/5 m-auto pt-10"
 								/>
 							<?php endif; ?>
-								<p class="text-xl font-bold capitalize mt-5"><?php the_title(); ?></p>
+								
 							<?php 
 								$myExcerpt = get_the_excerpt();
 								$tags = array("<p>", "</p>");
@@ -310,7 +310,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 						</ul>
 					</div>
 				</div>
-
+				
 				<!-- FAQ -->
 				<div class="flex flex-col my-5">
 					<div class="self-center text-center md:w-1/2">
@@ -322,24 +322,25 @@ $domain = "https://thisisatest.dev/?page_id=";
 						<details class="p-5 my-2 border-2 bg-white pointer-events-auto">
 							<summary class="py-2">Hvorfor skal ens it programmer være opdateret?</summary> 
 							<hr>
-							<p class="py-2">Hacker arbejde konstant på at finde smurt huller i programmer og jo længere tid siden jeres programmer er opdateret. desto større er chancen for at de har fundet en vej ind.</p> 
+							<p class="py-2">Hacker arbejde konstant på at finde smuthuller i programmer og jo længere tid siden jeres programmer er opdateret. desto større er chancen for at de har 							fundet en vej ind.</p> 
 						</details>
 						<details class="p-5 my-2 border-2 bg-white">
-							<summary class="py-2"> Hvad er et godt adgangskode?</summary> 
+							<summary class="py-2"> Hvad er en godt adgangskode?</summary> 
 							<hr>
-							<p class="py-2">Et godt kodeord skal helst indholde over 8 cifre, kombiner store og små bogstaver, tal og symboler. Før at beskytter dig i tilfælde af et at dine kodeord er blevet hacket, så brug aldrig det samme kodeord til flere kontorer</p> 
+							<p class="py-2">En god adgangskode skal helst indholde over 8 cifre, kombiner store og små bogstaver, tal og symboler. Før at beskytter dig i tilfælde af et at dine kodeord 								er blevet hacket, så brug aldrig det samme kodeord til flere kontorer</p> 
 						</details>
 						<details class="p-5 my-2 border-2 bg-white">
 							<summary class="py-2">Hvad er IT-kriminalitet?</summary> 
 							<hr>
-							<p class="py-2">Disse forbrydelser går ud på at skade en persons eller virksomheds it-system. Det er forbrydelser, der angriber computeren. Fx hacking, distribuering af malware, fx vira, orme og trojanske heste eller såkaldte DDoS-angreb, der går ud på at overbelaste en internetside.</p> 
+							<p class="py-2">Disse forbrydelser går ud på at skade en persons eller virksomheds it-system. Dette gøres ved at angriber computeren. Fx hacking, distribuering af malware, 							fx vira, orme og trojanske heste eller såkaldte DDoS-angreb, der går ud på at overbelaste en internetside.</p> 
 						</details>
 
 					</div>
 				</div>
+			<!-- faq end -->
 				<div class="self-center text-center mb-14">
 					<p class="py-5">Fandt du ikke svar på det du var efter? Så er du velkommen til at kontakte mig</p>
-					<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="https://thisisatest.dev/?page_id=137">Kontakt</a>
+					<a class="bg-transperent p-1 px-5 m-2 border rounded-m border-primary text-xl text-primary font-medium uppercase hbg-primary hover:text-white hover:border-0 transition duration-500 ease-in-out" href="<?php echo $domain; echo $kontakt; ?>">Kontakt</a>
 				</div>
 			</div>
 		</div>
@@ -355,8 +356,8 @@ $domain = "https://thisisatest.dev/?page_id=";
 	if( $post->ID == $omVirksomheden) { ?>
 		<div class="flex flex-col">
 			<div>
-				<div class="w-full h-full m-auto py-20 flex flex-col md:flex-row justify-evenly ">
-					<div class="w-full sm:w-1/3 flex flex-wrap order-last md:order-none">
+				<div class="w-full md:w-2/3 h-full m-auto py-20 flex flex-col md:flex-row justify-between ">
+					<div class="w-full sm:w-1/3 md:w-2/4 flex flex-wrap order-last md:order-none">
 						<div class="text-center pt-5 sm:pt-0 sm:text-left">
 							<a class="text-2xl font-bold capitalize mt-5" href="<?php the_permalink() ?>">Om theilmann IT/Automation</a>
 							<?php 
@@ -383,7 +384,7 @@ $domain = "https://thisisatest.dev/?page_id=";
 						</a>
 					</div>
 				</div>
-				<div class="w-2/3 m-auto h-full flex flex-col ">
+				<div class="md:w-2/3 m-auto h-full flex flex-col ">
 					<h2 class="text-2xl font-bold text-center  capitalize my-5">Vores mål</h2>
 					<div class="flex flex-col sm:flex-row justify-between">
 						<div class="flex flex-col sm:w-3/5 border-2 bg-white p-5 sm:mr-1">
@@ -400,13 +401,13 @@ $domain = "https://thisisatest.dev/?page_id=";
 					<div class="self-center">
 						<h2 class="text-2xl font-bold capitalize mt-5">Værdier</h2>
 					</div>
-					<div class="p-5 self-center">
+					<div class="md:w-2/3 py-5 self-center">
 						<p>
 						Vi vil sikre din virksomhed, så i trygt kan varetage jeres kunder og deres behov. Ved at styrke jeres it-sikkerhed, skaber vi mere 
 
 						</p>
 					</div>
-					<div class="w-2/3 self-center">
+					<div class="md:w-2/3 self-center">
 						<ul>
 							<li class="py-5">
 								<h2 class="font-bold">Value proposition 1.</h2>
@@ -441,11 +442,11 @@ $domain = "https://thisisatest.dev/?page_id=";
 						</div>
 						<?php the_content(); ?>
 						<div>
-							<ul class="flex flex-col sm:flex-row justify-between">
-								<li> <p>Tlf: +45 31 51 27 60</p> </li>
-								<li> <p>info@theilmann-it.dk</p> </li>
-								<li> <p>Teglgård 1 6330 Vilsbæk</p> </li>
-								<li> <p>CVR: 42049131</p> </li>
+							<ul class="flex flex-col sm:flex-row justify-between text-l">
+								<li> <p><i class="far fa-address-book"></i> Tlf: +45 31 51 27 60 </p> </li>
+								<li> <p><i class="far fa-envelope"></i> info@theilmann-it.dk</p> </li>
+								<li> <p><i class="fas fa-map-marker-alt"></i> Teglgård 1 6330 Vilsbæk</p> </li>
+								
 							</ul>
 						</div>
 					</div>
@@ -495,7 +496,8 @@ $domain = "https://thisisatest.dev/?page_id=";
 	})
 
 	const particlesMaterial = new THREE.PointsMaterial({
-		size: 0.003
+		size: 0.003,
+		color: 0x41575e
 	})
 	
 
